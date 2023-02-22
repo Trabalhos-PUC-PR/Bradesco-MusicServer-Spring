@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ArtistsRepository extends JpaRepository<Artist, Long> {
+
     List<Artist> findByGenre(String genre);
 }

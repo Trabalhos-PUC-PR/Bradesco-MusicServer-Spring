@@ -1,0 +1,1 @@
+[What is the exact meaning of the JPA @Entity annotation?](https://stackoverflow.com/questions/29332907/what-is-the-exact-meaning-of-the-jpa-entity-annotation)

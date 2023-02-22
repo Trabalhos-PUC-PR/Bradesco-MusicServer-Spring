@@ -1,5 +1,6 @@
 package br.pucpr.musicserver.rest.artists;
 
+import br.pucpr.musicserver.rest.album.Album;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -31,4 +32,10 @@ public class Artist {
     @Column(name="genre")
     @NotEmpty
     private Set<String> genres;
+
+    @ElementCollection
+    @CollectionTable(name="Albums", joinColumns = @JoinColumn(name="id"))
+    @Column(name="album")
+    @NotEmpty
+    private Set<Album> albums;
 }
