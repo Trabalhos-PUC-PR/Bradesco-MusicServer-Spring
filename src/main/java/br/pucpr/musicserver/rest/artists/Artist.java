@@ -33,9 +33,12 @@ public class Artist {
     @NotEmpty
     private Set<String> genres;
 
-    @ElementCollection
-    @CollectionTable(name="Albums", joinColumns = @JoinColumn(name="id"))
-    @Column(name="album")
-    @NotEmpty
+    @ManyToMany(mappedBy = "creators")
     private Set<Album> albums;
+
+    public Artist(Long id, String name, Set<String> genres){
+        this.id = id;
+        this.name = name;
+        this.genres = genres;
+    }
 }

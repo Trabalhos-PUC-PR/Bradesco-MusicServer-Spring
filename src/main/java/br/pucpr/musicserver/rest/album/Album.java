@@ -7,11 +7,12 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
 @Data
-@Entity @AllArgsConstructor
+@Entity @AllArgsConstructor @NoArgsConstructor
 public class Album {
     @Id
     @GeneratedValue
@@ -24,9 +25,12 @@ public class Album {
     private Integer releaseYear;
 
     @NotEmpty
-    @ElementCollection
-    @CollectionTable(name="Artist", joinColumns = @JoinColumn(name="id"))
-    @Column(name="creator")
+    @ManyToMany
+    @JoinTable(
+            name="Artist",
+            joinColumns = @JoinColumn(name="artist_id"),
+            inverseJoinColumns = @JoinColumn(name="album_id")
+    )
     private Set<Artist> creators;
 
 

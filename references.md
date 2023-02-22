@@ -1,1 +1,3 @@
-[What is the exact meaning of the JPA @Entity annotation?](https://stackoverflow.com/questions/29332907/what-is-the-exact-meaning-of-the-jpa-entity-annotation)
+- [What is the exact meaning of the JPA @Entity annotation?](https://stackoverflow.com/questions/29332907/what-is-the-exact-meaning-of-the-jpa-entity-annotation)
+- [JPA / Hibernate ElementCollection Example with Spring Boot](https://www.callicoder.com/hibernate-spring-boot-jpa-element-collection-demo/)
+- 
