@@ -26,10 +26,11 @@ public class Album {
 
     @NotEmpty
     @ManyToMany
+    @Column(name="creators")
     @JoinTable(
-            name="Artist",
-            joinColumns = @JoinColumn(name="artist_id"),
-            inverseJoinColumns = @JoinColumn(name="album_id")
+            name="ArtistsAlbums",
+            joinColumns = @JoinColumn(name="artist_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name="album_id", referencedColumnName = "id")
     )
     private Set<Artist> creators;
 

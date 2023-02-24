@@ -1,3 +1,10 @@
 - [What is the exact meaning of the JPA @Entity annotation?](https://stackoverflow.com/questions/29332907/what-is-the-exact-meaning-of-the-jpa-entity-annotation)
 - [JPA / Hibernate ElementCollection Example with Spring Boot](https://www.callicoder.com/hibernate-spring-boot-jpa-element-collection-demo/)
+- [Many-To-Many Relationship in JPA](https://www.baeldung.com/jpa-many-to-many)
+- [What does the @Valid annotation indicate in Spring?](https://stackoverflow.com/questions/3595160/what-does-the-valid-annotation-indicate-in-spring)
+- [JPA Many to Many example with Hibernate in Spring Boot](https://www.bezkoder.com/jpa-many-to-many/)
+- [Cannot add or update a child row: a foreign key constraint fails](https://stackoverflow.com/questions/5005388/cannot-add-or-update-a-child-row-a-foreign-key-constraint-fails)
+- [Javax Persistence Annotation Type ManyToMany](https://jakarta.ee/specifications/persistence/2.2/apidocs/javax/persistence/manytomany)
+- [Javax Persistence Enum FetchType](https://jakarta.ee/specifications/persistence/2.2/apidocs/javax/persistence/fetchtype)
+- [Lazy e Eager Loading com Hibernate](https://www.devmedia.com.br/lazy-e-eager-loading-com-hibernate/29554)
 - 

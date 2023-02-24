@@ -1,12 +1,15 @@
 package br.pucpr.musicserver.rest.artists;
 
 import br.pucpr.musicserver.rest.album.Album;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.core.util.Json;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.repository.cdi.Eager;
 
 import java.util.Set;
 
@@ -33,7 +36,11 @@ public class Artist {
     @NotEmpty
     private Set<String> genres;
 
-    @ManyToMany(mappedBy = "creators")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    @ManyToMany(
+//            fetch = FetchType.EAGER,
+            mappedBy = "creators"
+    )
     private Set<Album> albums;
 
     public Artist(Long id, String name, Set<String> genres){
