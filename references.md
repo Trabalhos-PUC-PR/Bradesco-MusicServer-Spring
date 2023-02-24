@@ -7,4 +7,6 @@
 - [Javax Persistence Annotation Type ManyToMany](https://jakarta.ee/specifications/persistence/2.2/apidocs/javax/persistence/manytomany)
 - [Javax Persistence Enum FetchType](https://jakarta.ee/specifications/persistence/2.2/apidocs/javax/persistence/fetchtype)
 - [Lazy e Eager Loading com Hibernate](https://www.devmedia.com.br/lazy-e-eager-loading-com-hibernate/29554)
+- [Query Many-to-many jpa](https://stackoverflow.com/questions/72162260/query-many-to-many-jpa/72163101#72163101)
+- [Annotation Interface RequestMapping](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html#path())
 - 

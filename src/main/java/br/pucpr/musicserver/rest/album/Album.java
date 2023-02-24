@@ -1,6 +1,7 @@
 package br.pucpr.musicserver.rest.album;
 
 import br.pucpr.musicserver.rest.artists.Artist;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
@@ -32,6 +33,7 @@ public class Album {
             joinColumns = @JoinColumn(name="artist_id", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name="album_id", referencedColumnName = "id")
     )
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Set<Artist> creators;
 
 

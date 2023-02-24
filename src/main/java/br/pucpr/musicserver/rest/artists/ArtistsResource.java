@@ -1,5 +1,6 @@
 package br.pucpr.musicserver.rest.artists;
 
+import br.pucpr.musicserver.rest.album.Album;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.annotation.security.RolesAllowed;
 import jakarta.transaction.Transactional;
@@ -42,5 +43,13 @@ public class ArtistsResource {
     @SecurityRequirement(name="AuthServer")
     public void delete(@PathVariable("id") Long id) {
         service.delete(id);
+    }
+
+    @GetMapping(path = "/{id}/albums")
+    @Transactional
+    @RolesAllowed({"ADMIN"})
+    @SecurityRequirement(name="AuthServer")
+    public List<Album> getArtistAlbum(@PathVariable("id") Long id){
+        return service.getAlbumsFromArtist(id);
     }
 }

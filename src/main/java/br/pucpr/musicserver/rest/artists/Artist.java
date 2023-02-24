@@ -16,11 +16,18 @@ import java.util.Set;
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
 @NamedQuery(
-        name="Artist.findByGenre",
-        query="SELECT a FROM Artist a" +
-                " JOIN a.genres g" +
-                " WHERE g = :genre" +
-                " ORDER BY a.name"
+    name="Artist.findByGenre",
+    query="SELECT a FROM Artist a" +
+            " JOIN a.genres g" +
+            " WHERE g = :genre" +
+            " ORDER BY a.name"
+)
+@NamedQuery(
+    name="Artist.getAlbumsFromArtistById",
+    query="SELECT albums FROM Artist a" +
+            " JOIN a.albums alb" +
+            " WHERE a.id = :id" +
+            " ORDER BY alb.name"
 )
 public class Artist {
     @Id
@@ -38,7 +45,6 @@ public class Artist {
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToMany(
-//            fetch = FetchType.EAGER,
             mappedBy = "creators"
     )
     private Set<Album> albums;

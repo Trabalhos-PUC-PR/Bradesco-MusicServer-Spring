@@ -2,6 +2,7 @@ package br.pucpr.musicserver.rest.artists;
 
 import br.pucpr.musicserver.lib.exception.BadRequestException;
 import br.pucpr.musicserver.lib.exception.NotFoundException;
+import br.pucpr.musicserver.rest.album.Album;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
@@ -37,4 +38,9 @@ public class ArtistsService {
         }
         repository.deleteById(id);
     }
+
+    public List<Album> getAlbumsFromArtist(Long id){
+        return repository.getAlbumsFromArtistById(id);
+    }
+
 }
