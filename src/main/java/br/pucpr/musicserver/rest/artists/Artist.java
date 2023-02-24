@@ -45,6 +45,7 @@ public class Artist {
 
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @ManyToMany(
+//            fetch = FetchType.EAGER,
             mappedBy = "creators"
     )
     private Set<Album> albums;

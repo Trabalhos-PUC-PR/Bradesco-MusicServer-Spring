@@ -14,6 +14,23 @@ import java.util.Set;
 
 @Data
 @Entity @AllArgsConstructor @NoArgsConstructor
+
+@NamedQuery(
+        name="Album.getAlbumsFromArtistById",
+        query="SELECT alb FROM Album alb" +
+                " JOIN alb.creators artist" +
+                " WHERE artist.id = :id" +
+                " ORDER BY alb.name"
+)
+@NamedQuery(
+        name = "Album.getAlbumsFromArtistByGenre",
+        query="SELECT alb from Album alb" +
+                " JOIN alb.creators artist" +
+                " JOIN artist.genres g" +
+                " WHERE g = :genre" +
+                " ORDER BY alb.name"
+)
+
 public class Album {
     @Id
     @GeneratedValue
