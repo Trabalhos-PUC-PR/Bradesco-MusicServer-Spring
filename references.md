@@ -9,4 +9,5 @@
 - [Lazy e Eager Loading com Hibernate](https://www.devmedia.com.br/lazy-e-eager-loading-com-hibernate/29554)
 - [Query Many-to-many jpa](https://stackoverflow.com/questions/72162260/query-many-to-many-jpa/72163101#72163101)
 - [Annotation Interface RequestMapping](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html#path())
-- 
+- [Spring Boot JPA how to retrieve data from a ManyToMany table?](https://stackoverflow.com/questions/64921910/spring-boot-jpa-how-to-retrieve-data-from-a-manytomany-table)
+- [colect/get all data from many to many relation with Spring + Hibernate](https://stackoverflow.com/questions/38113613/colect-get-all-data-from-many-to-many-relation-with-spring-hibernate)

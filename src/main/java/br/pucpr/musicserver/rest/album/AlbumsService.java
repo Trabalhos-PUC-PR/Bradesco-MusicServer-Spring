@@ -53,13 +53,13 @@ public class AlbumsService {
                 boolean delete = false;
 
                 if (to != null) {
-                    if (album.getReleaseYear() < to) {
+                    if (album.getReleaseYear() > to) {
                         delete = true;
                     }
                 }
 
                 if (from != null) {
-                    if (album.getReleaseYear() > from) {
+                    if (album.getReleaseYear() < from) {
                         delete = true;
                     }
                 }
