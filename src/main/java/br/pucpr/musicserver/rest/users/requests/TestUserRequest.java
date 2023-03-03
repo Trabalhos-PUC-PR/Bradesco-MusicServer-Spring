@@ -1,4 +1,4 @@
-package br.pucpr.musicserver.rest.users;
+package br.pucpr.musicserver.rest.users.requests;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TestUserDTO {
+public class TestUserRequest {
     private String token;
 }
