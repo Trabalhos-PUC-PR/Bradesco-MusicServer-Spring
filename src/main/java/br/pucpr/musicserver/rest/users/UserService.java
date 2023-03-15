@@ -3,49 +3,35 @@ package br.pucpr.musicserver.rest.users;
 import br.pucpr.musicserver.lib.security.JWT;
 import br.pucpr.musicserver.rest.users.requests.LoginRequest;
 import br.pucpr.musicserver.rest.users.resonses.UserLoginResponse;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.web.util.DefaultUriBuilderFactory;
 
 @Service
 public class UserService {
+    private static final Logger logger = LogManager.getLogger();
 
     private JWT jwt;
+    private AuthServerClient authServer;
 
-    public UserService(JWT jwt) {
+    public UserService(JWT jwt, AuthServerClient authServer) {
         this.jwt = jwt;
+        this.authServer = authServer;
+    }
+
+    public UserLoginResponse login(LoginRequest credentials){
+        return authServer.login(credentials)
+                .exceptionally(error-> {
+                    logger.error("Login failed - ", error.getCause());
+                    return null;
+                })
+                .join();
     }
 
     public UserLoginResponse createTestUser(String token){
         return jwt.createTestUser(token);
     }
 
-    public UserLoginResponse login(LoginRequest credentials){
-        var api = new RestTemplate();
-        var uri = new DefaultUriBuilderFactory()
-                .builder()
-                .scheme("http")
-                .host("localhost")
-                .port(3001)
-                .path("/api/users/login")
-                .build();
-        var headers = new HttpHeaders();
 
-//        headers.add(HttpHeaders.AUTHORIZATION, "Bearer "+token);
-        var request = new HttpEntity<>(credentials/*, headers*/);
-
-        var response = api.exchange(
-                uri,
-                HttpMethod.POST,
-                request,
-                UserLoginResponse.class
-                );
-
-        return response.getStatusCode().is2xxSuccessful() ?
-                response.getBody() : null;
-    }
 
 }
